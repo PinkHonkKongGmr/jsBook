@@ -1,0 +1,71 @@
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s !important;
+}
+
+.hide {
+    pointer-events: none;
+    height: 0;
+    opacity: 0;
+}
+
+.clickable__title {
+    font-size: 26px;
+    cursor: pointer;
+    color: rgb(105, 69, 190);
+    position: relative;
+    margin-left: 30px;
+}
+
+.ball {
+    position: absolute;
+    content: '';
+    left: -220px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: rgb(105, 69, 190);
+    border-radius: 50%;
+    transition: all .2s;
+}
+
+.clickable__title:hover .ball {
+    left: -28px;
+}
+
+.hasHeight {
+    height: 30px;
+    font-size: 20px;
+    margin-left: 35px;
+    position: relative;
+}
+
+.hovermarker {
+    width: 20px;
+    height: 20px;
+    background: #F583A1;
+    position: absolute;
+    left: 300px;
+    top: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.hasHeight:hover a {
+    text-decoration: none;
+}
+
+.hasHeight:hover .hovermarker {
+    opacity: 1;
+}
+
+.accordion {
+    margin-bottom: 30px;
+}

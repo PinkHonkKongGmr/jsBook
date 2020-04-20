@@ -1,0 +1,64 @@
+body {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+table {
+  border: 2px solid purple;
+}
+
+td {
+  border: 1px solid rgb(92, 92, 212);
+  padding: 8px;
+}
+
+th {
+  padding: 8px;
+}
+
+.list_style {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal !important;
+}
+
+.list_style li:nth-child(odd) {
+  display: list-item;
+  width: 100%;
+  background: #87cefa;
+}
+
+.list_style li:nth-child(even) {
+  display: list-item;
+  width: 100%;
+  background: #1faee9;
+}
+
+/* .list_style a {} */
+
+.card-header {
+  background-color: rgb(105, 69, 190) !important;
+
+}
+
+
+.btn-link {
+  color: rgb(224, 224, 143) !important;
+  text-decoration: none !important;
+  font-size: 30px !important;
+}
+
+.card-header:hover .btn-link {
+  color: white !important;
+
+}
+
+.btn-link .animaBalls {
+  display: none;
+}
+
+.btn-link:hover .animaBalls {
+  display: block;
+}
