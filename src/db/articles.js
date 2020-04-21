@@ -1127,6 +1127,27 @@ const Articles = {
                         привязываем ее к window
                         <img src={require('./assets/uprt.png')} />
                     </li>
+                    <li>
+                        <a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">
+                            Ивент луп. IventLoop наглядно
+                        </a>
+                    </li>
+                    <li>
+                        PromiseAll вывод: сначала ретурны в МАССИВЕ.
+                        <img src={require('./assets/promiseall.png')} />
+                        Это свяано с порядком выполнения операций. Микротаски и макротаски.
+                    </li>
+                    <li>
+                        Object.create может принимать второй аргумент. Объект. Однако значения ключей он принимает уже
+                        не явно. А через дескрипторы.
+                        <div>Пример маэстро</div>
+                        <img src={require('./assets/descr.png')} />
+                        <div></div>
+                        <a href="https://learn.javascript.ru/descriptors-getters-setters">Статья про дескрипторы</a>
+                    </li>
+                    <li>
+                        <a href="https://jsonplaceholder.typicode.com/">api</a> для тестирования работы с запросами
+                    </li>
                 </ol>
             </div>
         ),

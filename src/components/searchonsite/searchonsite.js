@@ -11,7 +11,7 @@ const SearchOnSite = () => {
     const articleAgrigator = stringInComponents();
 
     for (let key in Articles) {
-        articleAgrigator(Articles[key].content, array, Articles[key].link);
+        if (Articles.hasOwnProperty(key)) articleAgrigator(Articles[key].content, array, Articles[key].link);
     }
 
     if (value.length > 2) {
