@@ -1,6 +1,5 @@
 import React from 'react';
 import WelcomePage from '../../components/welcomepage';
-import SearchOnSite from '../../components/searchonsite';
 import { fromEvent, from, of } from 'rxjs';
 import { map, debounceTime, distinctUntilChanged, mergeMap, catchError, filter } from 'rxjs/operators';
 
@@ -58,8 +57,7 @@ class Gh extends React.Component {
             result = <div>{this.state.pack}</div>;
         } else {
             if (Array.isArray(this.state.pack)) {
-                console.log('og');
-                let list = this.state.pack.map((repo, ind) => <li>{repo.name}</li>);
+                let list = this.state.pack.map((repo, ind) => <li key={ind}>{repo.name}</li>);
                 result = <WelcomePage data={<div>{list}</div>} />;
             } else {
                 result = <div>Введите запрос</div>;
@@ -76,7 +74,6 @@ class Gh extends React.Component {
                     aria-describedby="basic-addon1"
                     onInput={this.onInputHandler}
                 />
-                <SearchOnSite />
                 {result}
             </div>
         );

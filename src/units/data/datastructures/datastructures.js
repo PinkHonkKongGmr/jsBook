@@ -1,5 +1,5 @@
 import Articles from '../../../db/articles';
 
-const DataStructures = () => Articles.datastructures;
+const DataStructures = () => Articles.datastructures.content;
 
 export default DataStructures;

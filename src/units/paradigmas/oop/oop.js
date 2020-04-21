@@ -1,5 +1,5 @@
 import Articles from '../../../db/articles';
 
-const OOP = () => Articles.oop;
+const OOP = () => Articles.oop.content;
 
 export default OOP;

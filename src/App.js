@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Gh from './hocs/gh';
+import SearchOnSite from './components/searchonsite';
 import Header from './components/header';
 import OOP from './units/paradigmas/oop';
 import Functional from './units/paradigmas/functional';
@@ -21,7 +21,7 @@ function App() {
             <Switch>
                 <div className="mx-3">
                     <Header />
-                    <Route path="/" component={Gh} exact />
+                    <Route path="/" component={SearchOnSite} exact />
                     <Route path="/oop" render={() => <OOP />} />
                     <Route path="/func" render={() => <Functional />} />
                     <Route path="/solid" render={() => <Solid />} />

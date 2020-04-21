@@ -1,0 +1,13 @@
+.results {
+    display: block;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgb(105, 69, 190);
+}
+
+.search__input {
+    margin-bottom: 30px;
+}
