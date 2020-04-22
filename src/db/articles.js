@@ -1148,6 +1148,23 @@ const Articles = {
                     <li>
                         <a href="https://jsonplaceholder.typicode.com/">api</a> для тестирования работы с запросами
                     </li>
+                    <li>
+                        в классах родительсие методы переписываются, однако можно воспользоваться super.method() для
+                        вызова оригинала
+                    </li>
+                    <li>Композиция для классов: Object.assign(classEx.prototype, ...needful opt)</li>
+                    <li>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Reflect">
+                            Рефлект{' '}
+                        </a>
+                        <a href="https://learn.javascript.ru/proxy">Proxy и Reflect</a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith">
+                            startwith проверяем начинается ли строка с..
+                        </a>
+                    </li>
+                    <li>void 0 - альтернативная запись всемилюбимого indefined</li>
                 </ol>
             </div>
         ),

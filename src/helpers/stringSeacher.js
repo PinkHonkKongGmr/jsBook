@@ -7,7 +7,7 @@ const stringInComponents = function () {
             el.props.children.forEach((element) => {
                 stringSearcher(element, arr, root);
             });
-        } else if (typeof el.props.children !== 'undefined') stringSearcher(el.props.children, arr, root);
+        } else if (el.props.children !== void 0) stringSearcher(el.props.children, arr, root);
 
         return arr;
     };
