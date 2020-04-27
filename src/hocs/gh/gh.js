@@ -1,7 +1,8 @@
 import React from 'react';
 import WelcomePage from '../../components/welcomepage';
-import { fromEvent, from, of } from 'rxjs';
-import { map, debounceTime, distinctUntilChanged, mergeMap, catchError, filter } from 'rxjs/operators';
+import Debounce from '../../helpers/debouncer.js';
+// import { fromEvent, from, of } from 'rxjs';
+// import { map, debounceTime, distinctUntilChanged, mergeMap, catchError, filter } from 'rxjs/operators';
 
 class Gh extends React.Component {
     constructor(props) {
@@ -14,6 +15,8 @@ class Gh extends React.Component {
             lastCall: 0,
         };
     }
+
+    debounce = Debounce(700);
 
     getUsersRepsFromAPI = (username) => {
         const url = `https://api.github.com/users/${username}/repos`;
@@ -32,20 +35,15 @@ class Gh extends React.Component {
         this.setState({ pack });
     };
 
-    debounce = async (interval, username) => {
-        let priviousCall = this.state.lastCall;
-        this.setState({ lastcall: Date.now });
-        if (priviousCall === 0 || (priviousCall - this.state.lastCall > interval && username !== this.username)) {
-            //почему this.uername сохраняется, а lastcall нет
-            this.username = username;
-            let pack = await this.getUsersRepsFromAPI(username);
-            this.recordRepsToList(pack);
-        }
-    };
-
-    onInputHandler = (e) => {
+    onInputHandler = async (e) => {
         if (e.target.value.length === 0) this.setState({ pack: 'введите запрос' });
-        if (e.target.value.length > 2) this.debounce(700, e.target.value);
+        if (e.target.value.length > 2 && this.debounce(700)) {
+            if (this.username !== e.target.value) {
+                this.username = e.target.value;
+                let pack = await this.getUsersRepsFromAPI(e.target.value);
+                this.recordRepsToList(pack);
+            }
+        }
         // реализация rxjs
         // fromEvent(e.target, 'keyup')
         //     .pipe(
