@@ -11,41 +11,54 @@ class Gh extends React.Component {
             data: 'nope',
             pack: 'Введите запрос',
             error: false,
+            lastCall: 0,
         };
     }
 
+    getUsersRepsFromAPI = (username) => {
+        const url = `https://api.github.com/users/${username}/repos`;
+
+        return fetch(url).then((response) => {
+            if (response.ok) {
+                this.setState({ isLoaded: true, error: false });
+                return response.json();
+            } else {
+                this.setState({ pack: 'ошибка соединения с сервером', error: true });
+            }
+        });
+    };
+
+    recordRepsToList = (pack) => {
+        this.setState({ pack });
+    };
+
+    debounce = async (interval, username) => {
+        let priviousCall = this.state.lastCall;
+        this.setState({ lastcall: Date.now });
+        if (priviousCall === 0 || (priviousCall - this.state.lastCall > interval && username !== this.username)) {
+            this.username = username;
+            let pack = await this.getUsersRepsFromAPI(username);
+            this.recordRepsToList(pack);
+        }
+    };
+
     onInputHandler = (e) => {
-        const getUsersRepsFromAPI = (username) => {
-            const url = `https://api.github.com/users/${username}/repos`;
-
-            return fetch(url).then((response) => {
-                if (response.ok) {
-                    this.setState({ isLoaded: true });
-                    return response.json();
-                } else {
-                    this.setState({ pack: 'ошибка соединения с сервером', error: true });
-                }
-            });
-        };
-
-        const recordRepsToList = (pack) => {
-            this.setState({ pack });
-        };
-
-        fromEvent(e.target, 'keyup')
-            .pipe(
-                debounceTime(700),
-                map((event) => event.target.value),
-                filter((val) => val.length > 2),
-                distinctUntilChanged(),
-                mergeMap((value) => {
-                    return from(getUsersRepsFromAPI(value)).pipe(catchError((err) => of([])));
-                })
-            )
-            .subscribe({
-                next: (pack) => recordRepsToList(pack),
-                error: this.setState({ pack: 'не корректный запрос' }),
-            });
+        if (e.target.value.length > 2) this.debounce(700, e.target.value);
+        // реализация rxjs
+        // fromEvent(e.target, 'keyup')
+        //     .pipe(
+        //         debounceTime(700),
+        //         map((event) => event.target.value),
+        //         filter((val) => val.length > 2),
+        //         distinctUntilChanged(),
+        //         mergeMap((value) => {
+        //             return from(this.getUsersRepsFromAPI(value)).pipe(catchError((err) => of([])));
+        //         })
+        //     )
+        //     .subscribe({
+        //         next: (pack) => this.recordRepsToList(pack),
+        //         error: this.setState({ pack: 'не корректный запрос' }),
+        //     });
     };
 
     render() {
@@ -57,6 +70,7 @@ class Gh extends React.Component {
             result = <div>{this.state.pack}</div>;
         } else {
             if (Array.isArray(this.state.pack)) {
+                console.log('pack', this.state.pack);
                 let list = this.state.pack.map((repo, ind) => <li key={ind}>{repo.name}</li>);
                 result = <WelcomePage data={<div>{list}</div>} />;
             } else {
@@ -68,7 +82,7 @@ class Gh extends React.Component {
             <div>
                 <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Поиск пользователей GitHub"
                     aria-label="github"
                     aria-describedby="basic-addon1"

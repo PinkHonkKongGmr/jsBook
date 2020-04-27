@@ -18,7 +18,7 @@ class Unit extends React.PureComponent {
         let listClass = this.state.toShowlist ? 'hasHeight' : 'hide';
         let lists = this.props.topics.map((topic, ind) => (
             <li className={listClass} key={ind}>
-                <div class="hovermarker"></div>
+                <div className="hovermarker"></div>
                 <Link to={topic.href}>{topic.text}</Link>
             </li>
         ));

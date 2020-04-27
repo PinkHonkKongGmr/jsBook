@@ -38,6 +38,20 @@ const Header = () => {
                                     title="Данные и их структуры"
                                     topics={[{ href: '/datastructures', text: 'Структуры данных' }]}
                                 />
+                                <Unit
+                                    title="JavaScript"
+                                    topics={[
+                                        { href: '/jsinheritance', text: 'Наследование в js' },
+                                        { href: '/debandthrott', text: 'Throttling и Debouncing' },
+                                    ]}
+                                />
+                                <Unit
+                                    title="Фронтенд"
+                                    topics={[
+                                        { href: '/loadingpage', text: 'Загрузка страницы' },
+                                        { href: '/req', text: 'Запросы' },
+                                    ]}
+                                />
                                 <Unit title="Верстка" topics={[{ href: '/adaptive', text: 'Резина/адаптив' }]} />
                                 <Unit
                                     title="Заметки"
@@ -46,6 +60,10 @@ const Header = () => {
                                         { href: '/reactnotes', text: 'Cтатьи по реакту' },
                                         { href: '/other', text: 'Разные технологии' },
                                     ]}
+                                />
+                                <Unit
+                                    title="База полезных видео"
+                                    topics={[{ href: '/videobasejs', text: 'Видео по js' }]}
                                 />
                             </div>
                         </Card.Body>
