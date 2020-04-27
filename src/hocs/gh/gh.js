@@ -36,6 +36,7 @@ class Gh extends React.Component {
         let priviousCall = this.state.lastCall;
         this.setState({ lastcall: Date.now });
         if (priviousCall === 0 || (priviousCall - this.state.lastCall > interval && username !== this.username)) {
+            //почему this.uername сохраняется, а lastcall нет
             this.username = username;
             let pack = await this.getUsersRepsFromAPI(username);
             this.recordRepsToList(pack);
@@ -43,6 +44,7 @@ class Gh extends React.Component {
     };
 
     onInputHandler = (e) => {
+        if (e.target.value.length === 0) this.setState({ pack: 'введите запрос' });
         if (e.target.value.length > 2) this.debounce(700, e.target.value);
         // реализация rxjs
         // fromEvent(e.target, 'keyup')
