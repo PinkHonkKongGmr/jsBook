@@ -9,6 +9,11 @@ li {
     transition: all 0.5s !important;
 }
 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .hide {
     pointer-events: none;
     height: 0;

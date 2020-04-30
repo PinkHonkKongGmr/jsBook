@@ -35,13 +35,18 @@ const Header = () => {
                                     ]}
                                 />
                                 <Unit
-                                    title="Данные и их структуры"
-                                    topics={[{ href: '/datastructures', text: 'Структуры данных' }]}
+                                    title="Данные. Структуры данных. Алгоритмы."
+                                    topics={[
+                                        { href: '/datastructures', text: 'Структуры данных' },
+                                        { href: '/datastructurejs', text: 'Типы данных JavaScript и структуры данных' },
+                                    ]}
                                 />
                                 <Unit
                                     title="JavaScript"
                                     topics={[
                                         { href: '/jsinheritance', text: 'Наследование в js' },
+                                        { href: '/comments', text: 'Комментарии' },
+                                        { href: '/ustrict', text: 'Строгий режим' },
                                         { href: '/debandthrott', text: 'Throttling и Debouncing' },
                                     ]}
                                 />
