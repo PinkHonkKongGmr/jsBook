@@ -38,7 +38,7 @@ const Header = () => {
                                     title="Данные. Структуры данных. Алгоритмы."
                                     topics={[
                                         { href: '/datastructures', text: 'Структуры данных' },
-                                        { href: '/datastructurejs', text: 'Типы данных JavaScript и структуры данных' },
+                                        { href: '/datastructurejs', text: 'Типы и структуры данных JS' },
                                     ]}
                                 />
                                 <Unit

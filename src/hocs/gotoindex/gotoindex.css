@@ -2,17 +2,22 @@
     position: sticky;
     top: 0px;
     z-index: 120;
+
 }
 
 .go_to_index {
-    width: 30px;
-    height: 30px;
-    background: rgb(194, 106, 106);
+    width: 48px;
+    height: 48px;
+    background: rgb(224, 224, 143);
     border-radius: .25rem;
     position: absolute;
-    right: 10px;
-    top: 10px
+    right: 18px;
+    top: 18px;
+    overflow: hidden;
+
 }
+
+
 
 .on {
     opacity: 1;
@@ -20,4 +25,14 @@
 
 .off {
     opacity: 0;
+}
+
+.go_home {
+    position: absolute;
+    left: 60px;
+    transition: all 0.6s;
+}
+
+.go_to_index:hover .go_home {
+    left: 0
 }
