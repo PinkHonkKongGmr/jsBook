@@ -12,7 +12,7 @@ const GoToindex = observer(() => {
     return (
         <div className={`go_to_index_wrapper ${status}`}>
             <Link className="go_to_index" to="/">
-                <div className="go_home">Go home!</div>
+                <div className="go_home"></div>
             </Link>
         </div>
     );

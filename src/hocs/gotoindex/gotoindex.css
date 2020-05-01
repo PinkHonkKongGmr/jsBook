@@ -8,7 +8,7 @@
 .go_to_index {
     width: 48px;
     height: 48px;
-    background: rgb(224, 224, 143);
+    background: rgba(255, 255, 255, 0.856);
     border-radius: .25rem;
     position: absolute;
     right: 18px;
@@ -30,9 +30,18 @@
 .go_home {
     position: absolute;
     left: 60px;
+    top: 40px;
+    width: 105%;
+    height: 105%;
     transition: all 0.6s;
+    background: url('../../db/assets/gohome.png');
+    background-size: cover;
+    border-radius: .25rem;
+
 }
 
 .go_to_index:hover .go_home {
-    left: 0
+    top: 0;
+    left: 0;
+    transform: skewY(180deg);
 }
