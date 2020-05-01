@@ -1,5 +1,7 @@
 import React from 'react';
 import SearchOnSite from '../searchonsite';
+import { observer } from 'mobx-react';
+import goToIndexStore from '../../store/gotoindex';
 
 class WelcomePage extends React.Component {
     constructor(props) {
@@ -7,15 +9,15 @@ class WelcomePage extends React.Component {
     }
 
     componentDidMount() {
-        console.log('mount');
+        goToIndexStore.statusSwitcher();
     }
 
     componentWillUnmount() {
-        console.log('unmount');
+        goToIndexStore.statusSwitcher();
     }
     render() {
         return <SearchOnSite />;
     }
 }
 
-export default WelcomePage;
+export default observer(WelcomePage);

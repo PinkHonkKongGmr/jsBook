@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import stringInComponents from '../../helpers/stringSeacher.js';
 import Articles from '../../db/articles';
 import { Link } from 'react-router-dom';
