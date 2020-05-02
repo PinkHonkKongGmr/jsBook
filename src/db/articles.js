@@ -2658,7 +2658,7 @@ const Articles = {
                         </li>
                         <li>
                             <a href="https://www.youtube.com/watch?v=lzQIhjElV_g&list=WL&index=19&t=0s">
-                                Ну и кудаж без Минина
+                                Ну и кудаж без Минина + хороший пример на VUE
                             </a>
                         </li>
                     </ul>
