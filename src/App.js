@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import SearchOnSite from './components/searchonsite';
+import WelcomePage from './components/welcomepage';
 import Header from './components/header';
 import GoToindex from './hocs/gotoindex';
 import OOP from './units/paradigmas/oop';
@@ -18,13 +18,13 @@ import Comments from './units/javascript/comments';
 import Ustrict from './units/javascript/usrict/ustrict';
 import LoadingPage from './units/frontend/requests/loadingpage';
 import Requests from './units/frontend/requests/req';
+import Rest from './units/frontend/rest';
 import Adaptive from './units/layout/adaptive';
 import JsNotes from './notes/jsnotes';
 import ReactNotes from './notes/reactnotes';
 import Other from './notes/other';
 import VideobaseJs from './units/videobase/js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import WelcomePage from './components/welcomepage';
 
 function App() {
     return (
@@ -52,6 +52,7 @@ function App() {
                 <Route path="/comments" render={() => <Comments />} />
                 <Route path="/ustrict" render={() => <Ustrict />} />
                 <Route path="/datastructurejs" render={() => <Dsj />} />
+                <Route path="/rest" render={() => <Rest />} />
             </div>
         </Router>
     );

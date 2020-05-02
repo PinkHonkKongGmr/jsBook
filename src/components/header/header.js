@@ -7,7 +7,7 @@ import { Accordion, Card, Button } from 'react-bootstrap';
 const Header = () => {
     return (
         <div className="header">
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey="1">
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="0">
@@ -55,6 +55,7 @@ const Header = () => {
                                     topics={[
                                         { href: '/loadingpage', text: 'Загрузка страницы' },
                                         { href: '/req', text: 'Запросы' },
+                                        { href: '/rest', text: 'Архитектура REST' },
                                     ]}
                                 />
                                 <Unit title="Верстка" topics={[{ href: '/adaptive', text: 'Резина/адаптив' }]} />
