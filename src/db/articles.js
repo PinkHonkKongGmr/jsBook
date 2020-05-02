@@ -2422,6 +2422,7 @@ const Articles = {
         link: '/rest',
         content: (
             <div>
+                <div className="meta">Ключевые слова:вью, рест, view</div>
                 <h3>REST</h3>
                 <p></p>
                 <div>

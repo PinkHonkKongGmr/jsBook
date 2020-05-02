@@ -3,6 +3,10 @@ body {
   padding-top: 20px;
 }
 
+.meta {
+  display: none;
+}
+
 table {
   border: 2px solid purple;
 }
