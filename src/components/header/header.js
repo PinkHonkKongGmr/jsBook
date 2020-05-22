@@ -45,6 +45,7 @@ const Header = () => {
                                     title="JavaScript"
                                     topics={[
                                         { href: '/jsinheritance', text: 'Наследование в js' },
+                                        { href: '/jscontext', text: 'Контекст' },
                                         { href: '/comments', text: 'Комментарии' },
                                         { href: '/ustrict', text: 'Строгий режим' },
                                         { href: '/debandthrott', text: 'Throttling и Debouncing' },
@@ -56,9 +57,16 @@ const Header = () => {
                                         { href: '/loadingpage', text: 'Загрузка страницы' },
                                         { href: '/req', text: 'Запросы' },
                                         { href: '/rest', text: 'Архитектура REST' },
+                                        { href: '/react-redux', text: 'React-redux' },
                                     ]}
                                 />
-                                <Unit title="Верстка" topics={[{ href: '/adaptive', text: 'Резина/адаптив' }]} />
+                                <Unit
+                                    title="Верстка"
+                                    topics={[
+                                        { href: '/bem', text: 'Методология БЭМ' },
+                                        { href: '/adaptive', text: 'Резина/адаптив' },
+                                    ]}
+                                />
                                 <Unit
                                     title="Заметки"
                                     topics={[

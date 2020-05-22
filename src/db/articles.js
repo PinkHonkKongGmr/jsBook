@@ -1101,6 +1101,25 @@ const Articles = {
             </div>
         ),
     },
+    bem: {
+        link: '/bem',
+        content: (
+            <div>
+                <h3>Бэм</h3>
+                <p></p>
+                <div>+ демоснтрация расширения для переноса структкры дом в ксс(csstractor sublime)</div>
+                <div>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/HihYQVuH64U"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        ),
+    },
     adaptive: {
         link: '/adaptive',
         content: (
@@ -1162,6 +1181,9 @@ const Articles = {
                     </li>
                     <li>
                         <a href="https://learn.javascript.ru/polyfills">Полифилы</a>
+                    </li>
+                    <li>
+                        <a href="https://habr.com/ru/company/ruvds/blog/422089/">Статья</a> про контекст. Виды контекста
                     </li>
                     <li>
                         Упоротый пример. Контекст при привзяки мы берем в момент ВЫЗОВА А так как функия вне объекта
@@ -1226,6 +1248,21 @@ const Articles = {
             <div>
                 <h3>Заметки по react</h3>
                 <ol className="row list_style">
+                    <li>
+                        Хорошее <a href="https://www.youtube.com/watch?v=xJZa2_aldDs">видево по react от маэстро </a>
+                    </li>
+                    <li>
+                        PropTypes. Библиотека которая настраивает пропсы.{' '}
+                        <img src={require('./assets/proptypes.png')} />
+                    </li>
+                    <li>
+                        Что делать если cannot GET get react-router{' '}
+                        <p>
+                            Fixing the "cannot GET /URL" error on refresh with React Router and Reach Router (or how
+                            client side routers work)
+                        </p>
+                        <a href="https://tylermcginnis.com/react-router-cannot-get-url-refresh/">Здесь</a>
+                    </li>
                     <li>
                         <a href="https://habr.com/ru/post/351168/">Статья про thunk и saga</a>
                     </li>
@@ -2198,6 +2235,17 @@ const Articles = {
             </div>
         ),
     },
+    jscontext: {
+        link: './jscontext',
+        content: (
+            <div>
+                <h3>Контекст выполнения и стек вызовов в JavaScript</h3>
+                <p>
+                    <a href="https://habr.com/ru/company/ruvds/blog/422089/">Статья</a> про контекст. Виды контекста
+                </p>
+            </div>
+        ),
+    },
     debAndThrott: {
         link: './debandthrott',
         content: (
@@ -2664,6 +2712,101 @@ const Articles = {
                         </li>
                     </ul>
                 </div>
+            </div>
+        ),
+    },
+    reactredux: {
+        link: './react-redux',
+        content: (
+            <div>
+                <h3>React und Redux</h3>
+                <p>Паттерны. Принципы. Интересности</p>
+                <ul className="row list_style">
+                    <li>
+                        <Link to="/react_patterns">Паттерны React</Link>
+                    </li>
+                    <li>
+                        <Link to="/reactprinciples">Принципы React</Link>
+                    </li>
+                    <li>
+                        <Link to="/reduxpure">
+                            Почему редьюсеры редакс - <Link to="/func">чистые функции</Link>
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+        ),
+    },
+    reactpatterns: {
+        link: './react_patterns',
+        content: (
+            <div>
+                <h2>Паттерны React</h2>
+                <p></p>
+                <h3>Hoc. Компонент высшего порядка</h3>
+                <p>
+                    Говоря просто,{' '}
+                    <a href="https://ru.reactjs.org/docs/higher-order-components.html">компонент высшего порядка</a> —
+                    это функция, которая принимает компонент и возвращает новый компонент.
+                </p>
+                <div>
+                    Если обычный компонент преобразует пропсы в UI, то компонент высшего порядка преобразует компонент в
+                    другой компонент.
+                </div>
+                <div>
+                    HOC часто встречаются в сторонних библиотеках, например connect в Redux и createFragmentContainer в
+                    Relay.
+                </div>
+                <div>
+                    HOC ничего не меняет и не наследует поведение оборачиваемого компонента, вместо этого HOC
+                    оборачивает оригинальный компонент в контейнер посредством композиции. HOC является чистой функцией
+                    без побочных эффектов.
+                </div>
+                <p></p>
+                <h2>Render props</h2>
+                <div>
+                    Термин <a href="https://ru.reactjs.org/docs/render-props.html">«рендер-проп»</a> относится к
+                    возможности компонентов React разделять код между собой с помощью пропа, значение которого является
+                    функцией.
+                </div>
+                <div>Такой подход, в частности, применяется в библиотеках React Router, Downshift и Formik.</div>
+                <p></p>
+                <h2>Условный рендеринг</h2>
+                <div>
+                    <a href="https://ru.reactjs.org/docs/conditional-rendering.html">Условный рендеринг</a> в React
+                    работает так же, как условные выражения работают в JavaScript. Бывает нужно объяснить React, как
+                    состояние влияет на то, какие компоненты требуется скрыть, а какие — отрендерить, и как именно. В
+                    таких ситуациях используйте условный оператор JavaScript или выражения подобные if.
+                </div>
+                <p></p>
+                <div>
+                    und:{' '}
+                    <a href="https://github.com/reactjs/react-future/tree/master/07%20-%20Returning%20State">
+                        Еще паттерны react
+                    </a>
+                </div>
+            </div>
+        ),
+    },
+    reduxpure: {
+        link: '/reduxpure',
+        content: (
+            <div>
+                <h3>Why Redux need reducers to be “pure functions”</h3>
+                <p></p>
+                <a href="https://www.freecodecamp.org/news/why-redux-needs-reducers-to-be-pure-functions-d438c58ae468/">
+                    Cтатья в оригинале
+                </a>
+            </div>
+        ),
+    },
+    reactprinciples: {
+        link: '/reactprinciples',
+        content: (
+            <div>
+                <h2>
+                    <a href="https://ru.reactjs.org/docs/design-principles.html">Принципы проектирования React</a>
+                </h2>
             </div>
         ),
     },
