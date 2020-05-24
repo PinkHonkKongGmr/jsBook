@@ -1,6 +1,9 @@
 import React from 'react';
 
 class Test extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     state = { text: 'text' };
     handleClick = () => {
         this.setState({ text: 'pooh' });
@@ -13,7 +16,6 @@ class Test extends React.Component {
         console.log('render in state');
         return (
             <div>
-                {this.state.text}
                 <button onClick={this.handleClick}>Мяк-жмяк</button>
             </div>
         );

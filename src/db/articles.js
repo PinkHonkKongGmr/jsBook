@@ -2729,6 +2729,9 @@ const Articles = {
                         <Link to="/reactprinciples">Принципы React</Link>
                     </li>
                     <li>
+                        <Link to="/reacthooksandlifecycle">Жизненный цикл React. Методы жизненного цикла. Хуки.</Link>
+                    </li>
+                    <li>
                         <Link to="/reduxpure">
                             Почему редьюсеры редакс - <Link to="/func">чистые функции</Link>
                         </Link>
@@ -2807,6 +2810,86 @@ const Articles = {
                 <h2>
                     <a href="https://ru.reactjs.org/docs/design-principles.html">Принципы проектирования React</a>
                 </h2>
+            </div>
+        ),
+    },
+    reacthooksandlifecycle: {
+        link: '/reacthooksandlifecycle',
+        content: (
+            <div>
+                <h2>Жизненный цикл</h2>
+                <p></p>
+                <div>Методы жизненного цикла схематично:</div>
+                <div>
+                    <img src={require('./assets/lsmetods.png')} />
+                </div>
+                <p></p>
+                <h3>Монтирование</h3>
+                <p></p>
+                <ul className="list_style row">
+                    <li>Constructor</li>
+                    <li>
+                        <a href="https://ru.reactjs.org/docs/react-component.html#static-getderivedstatefromprops">
+                            static getDerivedStateFromProps
+                        </a>
+                    </li>
+                    <li>render</li>
+                    <li>*устаревший* componentWillMount</li>
+                    <li>componentDidmount</li>
+                </ul>
+                <p></p>
+                <div>
+                    <strong>Подробнее о getDerivedStateFromProps</strong>
+                </div>
+                <div>
+                    getDerivedStateFromProps - по сути редко используемый метод жизненого цикла. используется для
+                    контроля рендера элемента, когда состояние зависит от пропсов
+                </div>
+                <strong>
+                    Производное состояние приводит к сложному коду и делает ваши компоненты сложными для понимания.
+                    Убедитесь, что вы знакомы с простыми альтернативами:
+                </strong>
+                <ul className="list_style row">
+                    <li>
+                        Чтобы выполнить побочный эффект при изменении пропсов (например, сетевой запрос или анимацию)
+                        используйте componentDidUpdate.
+                    </li>
+                    <li>
+                        Чтобы повторно вычислить данные при изменении пропсов, используйте функцию{' '}
+                        <a href="https://habr.com/ru/company/ruvds/blog/332384/">мемоизации.</a>
+                    </li>
+                    <li>
+                        Чтобы «сбросить» некоторое состояние при изменении пропсов, используйте управляемые компоненты
+                        или неуправляемые компоненты с ключом.
+                    </li>
+                </ul>
+                <p></p>
+                <h3>обновление</h3>
+                <p></p>
+                <ul className="list_style row">
+                    <li>getDerivedStateFromProps</li>
+                    <li>
+                        <a href="https://ru.reactjs.org/docs/react-component.html#shouldcomponentupdate">
+                            shouldComponentUpdate
+                        </a>
+                    </li>
+                    <li>render</li>
+                    <li>
+                        <a href="https://ru.reactjs.org/docs/react-component.html#getsnapshotbeforeupdate">
+                            getSnapshotBeforeUpdate
+                        </a>
+                    </li>
+                    <li>componentDidUpdate</li>
+                </ul>
+                <p></p>
+                <h3>Размонтирование</h3>
+                <ul className="list_style row">
+                    <li>componentWillUnmount</li>
+                </ul>
+                <p></p>
+                <h3>
+                    <a href="https://ru.reactjs.org/docs/hooks-reference.html">Хуки</a>
+                </h3>
             </div>
         ),
     },

@@ -27,7 +27,7 @@ import JsNotes from './notes/jsnotes';
 import ReactNotes from './notes/reactnotes';
 import Other from './notes/other';
 import VideobaseJs from './units/videobase/js';
-import reactReduxRoutes from './units/frontend/reactRedux/reactReduxRoutes';
+import ReactReduxRoute from './units/frontend/reactRedux/reactReduxRoutes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -60,7 +60,7 @@ function App() {
                 <Route path="/rest" render={() => <Rest />} />
                 <Route path="/react-redux" render={() => <ReactRedux />} />
                 <Route path="/bem" render={() => <Bem />} />
-                {reactReduxRoutes}
+                <ReactReduxRoute />
             </div>
         </Router>
     );
