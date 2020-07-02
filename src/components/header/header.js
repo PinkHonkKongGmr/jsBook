@@ -42,6 +42,14 @@ const Header = () => {
                                     ]}
                                 />
                                 <Unit
+                                    title="Git"
+                                    topics={[
+                                        { href: '/gitcommands', text: 'Полезные команды' },
+                                        { href: '/mergevsrebase', text: 'Merge vs rebase' },
+                                    ]}
+                                />
+
+                                <Unit
                                     title="JavaScript"
                                     topics={[
                                         { href: '/jsinheritance', text: 'Наследование в js' },

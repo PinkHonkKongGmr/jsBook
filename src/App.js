@@ -28,6 +28,8 @@ import ReactNotes from './notes/reactnotes';
 import Other from './notes/other';
 import VideobaseJs from './units/videobase/js';
 import ReactReduxRoute from './units/frontend/reactRedux/reactReduxRoutes';
+import MergeVsRebase from './units/git/mergevsrebase';
+import GitCommands from './units/git/gitcommands';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -60,6 +62,8 @@ function App() {
                 <Route path="/rest" render={() => <Rest />} />
                 <Route path="/react-redux" render={() => <ReactRedux />} />
                 <Route path="/bem" render={() => <Bem />} />
+                <Route path="/mergevsrebase" render={() => <MergeVsRebase />} />
+                <Route path="/gitcommands" render={() => <GitCommands />} />
                 <ReactReduxRoute />
             </div>
         </Router>

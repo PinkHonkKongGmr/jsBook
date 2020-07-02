@@ -1292,6 +1292,9 @@ const Articles = {
                 </ol>
                 <h3>Пример с реализацией rxjs</h3>
                 <Gh />
+                <div>
+                    <a href="https://habr.com/ru/company/ruvds/blog/428173/">Статья по настройке ESLINT Prettier</a>
+                </div>
             </div>
         ),
     },
@@ -2242,7 +2245,38 @@ const Articles = {
                 <h3>Контекст выполнения и стек вызовов в JavaScript</h3>
                 <p>
                     <a href="https://habr.com/ru/company/ruvds/blog/422089/">Статья</a> про контекст. Виды контекста
+                    <a htef="https://www.thecodingdelight.com/javascript-this/">Статья про this</a>
                 </p>
+                <div>запилил видосик(в двух частях, на гитпейджес ограничение по объему файлов=():</div>
+                <video width="400" height="300" controls="controls">
+                    <source
+                        src={require('./assets/aboutcontext.mp4')}
+                        type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+                    />
+                </video>
+                <div></div>
+                <video width="400" height="300" controls="controls">
+                    <source
+                        src={require('./assets/multcontfull.mp4')}
+                        type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+                    />
+                </video>
+                <h3>Мякотка</h3>
+                <p></p>
+                <div>
+                    <img src={require('./assets/typecontext.png')} />
+                </div>
+                <div>
+                    <img src={require('./assets/stadii.png')} />
+                </div>
+                <div>
+                    <img src={require('./assets/typelexical.png')} />
+                </div>
+                <p></p>
+                <div>
+                    <div>Коментарии к статье, достойные внимания</div>
+                    <img src={require('./assets/intcoms.png')} />
+                </div>
             </div>
         ),
     },
@@ -2887,9 +2921,131 @@ const Articles = {
                     <li>componentWillUnmount</li>
                 </ul>
                 <p></p>
+                <h3>Обработка ошибок</h3>
+                <ul className="list_style row">
+                    <li>static getDerivedStateFromError</li>
+                    <li>
+                        <a href="https://ru.reactjs.org/docs/react-component.html#componentdidcatch">
+                            componentDidCatch
+                        </a>
+                    </li>
+                </ul>
+                <p></p>
                 <h3>
                     <a href="https://ru.reactjs.org/docs/hooks-reference.html">Хуки</a>
                 </h3>
+                <p></p>
+                <h4>Зачем вообще нужны хуки?</h4>
+                <ol className="list_style row">
+                    <li>
+                        Решают проблему разделения логики. Раньше использовались hoc и render-props. Теперь можно
+                        создавать хуки
+                    </li>
+                    <li>
+                        Декомпозирует сложные структуры. раньше все было закидано в методы жизненого цикла. сейчас можно
+                        расфасовать по useEffect. C другой стороны один и тотже код мог присутвовать и в
+                        componentDidMount и в componentDidUpdate
+                        <p></p>
+                        Из доки: Нам часто приходилось поддерживать компоненты, которые изначально были простыми, но
+                        превратились в неуправляемый беспорядок, состоящий из логики состояния и побочных эффектов.
+                        Каждый метод жизненного цикла часто содержит смесь несвязанной логики. Например, компоненты
+                        могут загружать данные в componentDidMount и componentDidUpdate. Однако тот же метод
+                        componentDidMount может содержать несвязанную логику, которая добавляет обработчики события с
+                        отменой подписки в componentWillUnmount. Взаимосвязанный код, который изменяется вместе,
+                        разделяется, но совершенно несвязанный код в конечном итоге объединяется в один метод. Это легко
+                        приводит к багам и несоответствиям в приложении. В некоторых случаях невозможно разбить
+                        компоненты на более мелкие, потому что логика состояния раскидана повсюду. Такие компоненты
+                        сложно тестировать. Это одна из причин, по которой люди предпочитают использовать в React
+                        отдельную библиотеку для управления состоянием. Однако, это добавляет множество абстракций,
+                        заставляет прыгать между разными файлами и усложняет повторное использование компонентов.
+                        <p>
+                            Чтобы решить эту проблему, хуки позволяют разбить один компонент на маленькие функции по их
+                            назначению (например, подписке или загрузке данных), а не на основе методов жизненного
+                            цикла. Вы также можете контролировать внутреннее состояние с помощью редюсера, чтобы
+                            поведение было более предсказуемым.
+                        </p>
+                    </li>
+                    <li>
+                        Классы путают как людей, так и машины. Использовались нестабильные синтаксические конструкции
+                    </li>
+                </ol>
+            </div>
+        ),
+    },
+    commergevsrebasements: {
+        link: '/mergevsrebase',
+        content: (
+            <div>
+                <h2>git rebase vs merge</h2>
+                <p></p>
+                <div>
+                    <div>
+                        <a href="https://www.atlassian.com/ru/git/tutorials/merging-vs-rebasing">Статья</a>
+                    </div>
+                    <div>
+                        {' '}
+                        <a href="https://www.atlassian.com/ru/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing">
+                            Золотое правило перебазирования
+                        </a>
+                    </div>
+                    <p></p>
+                    <h3>Плюсы минусы</h3>
+                    <ul className="list_style row">
+                        <li>
+                            {' '}
+                            Золотое правило: делаем rebase ТОЛЬКО в ветке, де работаем одни. Так как мы делаем на самом
+                            деле копию ветки и не переносим чужие коммиты
+                        </li>
+                        <li>
+                            с rebase мы можем получить битые коммиты, так как нет гарантий, что при преносе наш код
+                            остается рабочим(к примеру в мастере была перименована функция) <br></br> рекомендуется
+                            делать rebase -x test
+                            <br></br>
+                            merge в этом плане более безопасный,так как битый будет только один комит- комит слияния
+                        </li>
+                        <li>rebase подразумевает более чистую, понятную и читаемую историю коммитов</li>
+                    </ul>
+                </div>
+            </div>
+        ),
+    },
+    gitcommands: {
+        link: '/gitcommands',
+        content: (
+            <div>
+                <h2>git полезные команды</h2>
+                <p></p>
+                <div>
+                    <ul className="list_style row">
+                        <li>reflog - история изменений HEAD(git reflog mybranch -1\\покажет предыдущий коммит)</li>
+                        <li>
+                            ORIG_HEAD(прим git reset --hard ORIG_HEAD) сохраненное состоянии head, можно использовать
+                            для возврата взад
+                        </li>
+                        <li> stash - сохраняем изменения при переключении на ветку pop-вызвать эти изменения</li>
+                        <li>git checkout *commit_number* *file.ext* - вернуться к версии файла</li>
+                        <li>git commit --amend замена последнего коммита, тоже что git reset --soft + add\commit </li>
+                        <li>
+                            git rebase master<br></br>
+                            git rebase --abort // удалит служебную информацию о перебазировании и вернет head на ветку
+                            <br></br>
+                            git rebase --quit // удалит служебную информацию о перебазировании но НЕ вернет head на
+                            ветку
+                            <br></br>
+                            git rebase --skip // игнорировать изменение в коммите
+                            <br></br>
+                            git rebase --continue // продолжить перебазирование после устранения конфликта, будь он
+                            неладен
+                            <br></br>
+                            git rebase --i позволяет редактировать историю коммитов
+                            <br></br>
+                            Опции:pick(оставить комит без изменений), reword(изменить описание), edit(остановить ребейз
+                            на комите для подробного изменения),squash(слить с предыдущим), fixup(сквош+отброс сообщения
+                            о коммите), exec(добавление произволтных команд напрм тесты), drop(ну его в пень, этот
+                            комит)
+                        </li>
+                    </ul>
+                </div>
             </div>
         ),
     },
